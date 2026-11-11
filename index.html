@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대치동 예비고3 현강 가이드 (Copy)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>/* layout: single readable column, sticky section tabs, teacher cards in an auto grid */
+:root{--bg:#f4f6f8;--surface:#ffffff;--ink:#16202c;--muted:#5b6776;--line:#dde3ea;--accent:#0b6e5f;--accent-soft:#e2f2ee;--warn:#b4442f;--warn-soft:#fbe9e5;
+--display:"IBM Plex Sans KR","Noto Sans KR",system-ui,sans-serif;--body:"Noto Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10161d;--surface:#18212b;--ink:#e7edf3;--muted:#9aa7b5;--line:#2a3643;--accent:#4cc3a8;--accent-soft:#16332d;--warn:#f08a74;--warn-soft:#3a201b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10161d;--surface:#18212b;--ink:#e7edf3;--muted:#9aa7b5;--line:#2a3643;--accent:#4cc3a8;--accent-soft:#16332d;--warn:#f08a74;--warn-soft:#3a201b;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;word-break:keep-all}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.hero{padding:44px 0 28px;border-bottom:1px solid var(--line);background:var(--surface)}
+.eyebrow{margin:0 0 10px;font-size:13px;letter-spacing:.04em;color:var(--accent);font-weight:700}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.2;font-weight:700}
+.lede{color:var(--muted);max-width:62ch;margin:14px 0 20px}
+.key{background:var(--accent-soft);border-left:4px solid var(--accent);padding:14px 16px;border-radius:6px;display:grid;gap:4px}
+.key b{color:var(--accent);font-size:13px}
+.tabs{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+.tabs a{flex:none;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.tabs a:hover,.tabs a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
+section{padding:40px 0 12px;border-bottom:1px solid var(--line)}
+section:last-child{border-bottom:0}
+.num{margin:0;font-family:var(--display);font-weight:700;color:var(--accent);font-size:14px}
+h2{font-size:28px;margin-top:2px}
+.intro{color:var(--muted);max-width:62ch;margin:8px 0 8px}
+h3{font-size:19px;margin:30px 0 12px;display:flex;align-items:baseline;gap:8px}
+h3 small{font-size:13px;color:var(--muted);font-weight:500}
+.sub{margin:-6px 0 12px;color:var(--muted);font-size:14px}
+.note{font-size:14px;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:8px;padding:10px 14px;margin:14px 0 0}
+.check,.steps{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.check label{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.check input{width:18px;height:18px;margin-top:4px;accent-color:var(--accent);flex:none}
+.check input:checked+span{color:var(--muted);text-decoration:line-through}
+.check input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.steps{counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.steps li::before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--surface);font-weight:700;font-size:14px;display:grid;place-items:center;margin-top:1px}
+.tips{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.tips li{padding-left:16px;position:relative}
+.tips li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.tips b{font-weight:700}
+.speed{display:grid;gap:10px}
+.sp-r{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center}
+.sp-n{display:flex;gap:8px;align-items:baseline}
+.sp-n span{font-size:13px;color:var(--muted)}
+.sp-r p{grid-column:1/-1;margin:0;font-size:14px;color:var(--muted)}
+.meter{display:flex;gap:3px}
+.meter i{width:14px;height:8px;border-radius:2px;background:var(--line)}
+.meter i.on{background:var(--warn)}
+.know{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.k{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.k h4{font-size:15px;margin-bottom:4px}
+.k p{margin:0;font-size:14px;color:var(--muted)}
+.rec{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.rec-h,.rec-r{display:grid;grid-template-columns:minmax(120px,38%) 1fr}
+.rec-h{background:var(--accent-soft);font-weight:700;font-size:13px;color:var(--accent)}
+.rec-h span,.rec-k,.rec-v{padding:10px 14px}
+.rec-r+.rec-r,.rec-h+.rec-r{border-top:1px solid var(--line)}
+.rec-k{font-weight:700}
+@media (max-width:420px){.rec-h,.rec-r{grid-template-columns:1fr}.rec-h span+span{display:none}.rec-k{padding-bottom:0}.rec-v{padding-top:2px}}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:6px;align-content:start}
+.card header{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card h4{font-size:18px}
+.tag{font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.card p{margin:0;font-size:14px}
+.feat{color:var(--muted)}
+.pro,.con{display:grid;grid-template-columns:38px 1fr;gap:6px}
+.pro b,.con b{font-size:12px;font-weight:700;border-radius:4px;text-align:center;align-self:start;margin-top:2px;padding:1px 0}
+.pro b{color:var(--accent);background:var(--accent-soft)}
+.con b{color:var(--warn);background:var(--warn-soft)}
+footer{padding:28px 0 44px;color:var(--muted);font-size:13px}
+.key-plain{margin:14px 0 0;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent)}
+.paths{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.path{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;padding:16px;display:grid;gap:6px;align-content:start}
+.path+.path{border-top-color:var(--warn)}
+.path-q{margin:0;font-size:13px;font-weight:700;color:var(--muted)}
+.path h4{font-size:19px}
+.path p{margin:0;font-size:14px}
+.notice{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 20px;margin:32px 0 8px}
+.classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:16px}
+.cls{border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:2px;background:var(--bg)}
+.cls-tag{justify-self:start;font-size:12px;font-weight:700;color:var(--surface);background:var(--accent);padding:2px 10px;border-radius:999px;margin-bottom:6px}
+.cls-day{margin:0;font-family:var(--display);font-size:20px;font-weight:700}
+.cls-time{margin:0;font-size:16px;font-variant-numeric:tabular-nums}
+.cls-start{margin:6px 0 0;font-size:14px;color:var(--accent);font-weight:700}
+.flow{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.flow li{font-size:14px;border:1px dashed var(--line);border-radius:8px;padding:8px 12px}
+.flow li b{margin-right:6px}
+.flow li+li::before{content:"→";margin-right:8px;color:var(--muted)}
+
+.card .badge{display:inline-block;margin:.35rem 0 .1rem;padding:.2rem .6rem;border-radius:999px;background:#fde68a;color:#7c2d12;font-weight:700;font-size:.9rem}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<p class="eyebrow">2028학년도 수능 대비 · 2026.11.11 기준</p>
+<h1>대치동 예비고3<br>현강 가이드</h1>
+<p class="lede">학부모 커뮤니티 후기를 모아 수강신청 요령과 국어·수학·영어·수리논술 강사를 정리했습니다. 후기는 개인 의견이며, 학원 소속과 개설 여부는 해마다 바뀌니 신청 전에 꼭 확인하세요.</p>
+<div class="key"><b>가장 많이 나온 결론</b>일타보다 아이와 맞는 선생님, 그리고 복습·자습량이 성적을 정한다. 플랜B를 꼭 준비하자.</div>
+</div></header>
+<nav class="tabs" aria-label="목차"><div class="wrap"><a href="#apply">수강신청</a><a href="#korean">국어</a><a href="#math">수학</a><a href="#english">영어</a><a href="#nonsul">수리논술</a><a href="#calc2">미적분Ⅱ 내신</a></div></nav>
+<main class="wrap">
+<section id="apply"><p class="num">01</p><h2>수강신청 요령</h2>
+<p class="intro">대치 현강은 12월 말 개강, 수능 1~2주 전 종강하는 1년 풀커리입니다. 처음에 못 잡아도 대기가 대부분 풀립니다.</p>
+<h3>미리 할 일</h3><ol class="check"><li><label><input type="checkbox"><span>학원별 회원가입·문자 알림 신청 (부모 계정에 자녀 추가 가능)</span></label></li><li><label><input type="checkbox"><span>홈페이지의 신청·대기 버튼 위치 미리 익히기</span></label></li><li><label><input type="checkbox"><span>과목별 후보 강사를 아이와 함께 추리고 1안·2안·3안 시간표 짜기 (시간표는 10월 말~11월 초 공개)</span></label></li><li><label><input type="checkbox"><span>가능하면 과목 설명회 참석. 목소리·설명 방식은 후기로 알 수 없음</span></label></li><li><label><input type="checkbox"><span>관리형 독서실 예약 (겨울방학 자리가 빨리 참, 4주 45~65만 원 수준)</span></label></li></ol>
+<h3>신청 당일</h3><ul class="tips"><li><b>순서</b> 작년엔 세정 → 미래탐구 → 두각 → 윤도영 학원 → 시대인재 순으로 열림. 과목은 수학 → 국어 → 탐구 → 영어 순으로 잡기</li><li><b>동시 로그인 금지</b> 부모 둘이 같이 하면 로그인이 튕기거나 중복으로 취소됨</li><li><b>대기</b> 확정이 안 되면 바로 대기번호가 나옴. 같은 강사는 두 시간대까지 대기 가능했음</li><li><b>시대인재</b> 국어·수학이 동시에 열려 주력 과목부터. 수학은 강사 2명까지만 신청 가능하다는 말(확인 필요)</li><li><b>두각</b> 시간대가 안 맞아도 일단 잡으면 나중에 반 이동 가능</li></ul>
+<h3>인기 강의 마감 속도 <small>작년 기준</small></h3><div class="speed"><div class="sp-r"><div class="sp-n"><b>김현우</b><span>수학</span></div><div class="meter" aria-label="경쟁 강도 5/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><p>1~2초, 대기 수백~수천 번. 9월에야 풀린 사례</p></div><div class="sp-r"><div class="sp-n"><b>강기원</b><span>수학</span></div><div class="meter" aria-label="경쟁 강도 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></div><p>약 10초. 대기가 여름 뒤 풀린 사례</p></div><div class="sp-r"><div class="sp-n"><b>김재훈</b><span>국어</span></div><div class="meter" aria-label="경쟁 강도 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></div><p>몇 초 만에 마감</p></div><div class="sp-r"><div class="sp-n"><b>유대종·김동욱</b><span>국어</span></div><div class="meter" aria-label="경쟁 강도 4/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i></div><p>세정·미탐 서버가 다운될 정도</p></div><div class="sp-r"><div class="sp-n"><b>김승리</b><span>국어</span></div><div class="meter" aria-label="경쟁 강도 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></div><p>대기 1,000번대, 이원화라 앞번호는 개강 전 입반</p></div><div class="sp-r"><div class="sp-n"><b>강민철</b><span>국어</span></div><div class="meter" aria-label="경쟁 강도 3/5"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></div><p>가장 빨리 마감. 반이 많아 대기는 대부분 풀림</p></div><div class="sp-r"><div class="sp-n"><b>최지욱·이동선</b><span>수학</span></div><div class="meter" aria-label="경쟁 강도 1/5"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div><p>마감이 잘 안 됨 → 마지막에 신청</p></div></div>
+<p class="note">이원화 수업: 교실 2개를 강사가 교시별로 오가고 나머지는 TV 생중계로 듣는 방식. 정원이 커서 신청이 상대적으로 수월합니다.</p>
+<h3>알아두면 좋은 것</h3><div class="know"><div class="k"><h4>환불</h4><p>들은 회차만 빼고 바로 환불. 수강은 학원에, 교재는 강사 연구실(조교)에 따로 취소</p></div><div class="k"><h4>교재</h4><p>미개봉만 환불되니 수업을 들어보고 뜯기</p></div><div class="k"><h4>시대 라이브</h4><p>현강 대기자에게 신청 문자가 옴. 내용은 현강과 같고 소통·숙제 검사는 없음. 지방이면 좋은 대안</p></div><div class="k"><h4>일정</h4><p>수능 강좌는 대부분 토·일. 1학기 시험 때 3주씩 내신 휴강</p></div><div class="k"><h4>윈터스쿨·기숙학원</h4><p>비추. 12월 말 개강 커리를 놓침. 흔한 조합은 관리형 독서실 + 단과</p></div><div class="k"><h4>시대 컨텐츠</h4><p>핵심은 여름부터 나오는 서바이벌 모의고사. 수학은 두각(강대K)이 더 낫다는 의견도 있어 컨텐츠 때문에 학원을 좁힐 필요는 없음</p></div><div class="k"><h4>인강 패스</h4><p>메가·대성 다음 해 패스는 수능 전 프로모션이 가장 쌈. 고3 형제가 있으면 11월 30일 전 형제할인(10만 원)</p></div><div class="k"><h4>강민철 교재</h4><p>메가패스로 사면 8월분까지 우편 수령(현강 구매는 수강한 달만)</p></div></div>
+<h3>고3 수업을 제대로 활용하려면</h3><p class="sub">작년 시대인재 강사 상담 영상에서 나온 조언</p><ul class="tips"><li><b>수업 수는 소화할 만큼만.</b> 많이 듣는 것보다 복습할 시간이 중요</li><li><b>클리닉을 기대하지 말 것.</b> 고3 수업은 빠르고 밀도가 높아 질문이 어렵다. 수업 영상을 반복 복습하고 수업 후 고민하는 시간이 성적을 정한다</li><li><b>질문은 조교에게.</b> 과외를 구한다면 그 강사 수업을 아는 현장 조교 출신이 효율적</li><li><b>기말 직후~개강 전 열흘이 골든타임.</b> 약한 과목 보완 계획을 지금 세울 것</li><li><b>안 맞으면 바로 교체.</b> 놓친 수업은 이전 영상을 구매해 보충. 단, 이동준·김현우처럼 중간 합류가 어렵다는 강사도 있음</li><li><b>학원별 성향.</b> 시대는 심화 수업이 많고, 러셀은 방학에 입문용 수업이 열리며, 두각은 김범준과 과목별로 따로 운영하는 정상모가 주목받음</li></ul>
+</section>
+<section id="korean"><p class="num">02</p><h2>국어</h2>
+<p class="intro">국어는 취향을 가장 많이 탑니다. 후보 2~3명의 첫 수업을 들어보고 아이가 고르게 하세요. 중간에 바꾸는 일도 흔합니다.</p>
+<h3>이런 학생이라면</h3><div class="rec"><div class="rec-h"><span>상황</span><span>추천</span></div><div class="rec-r"><div class="rec-k">백분위 99 이상</div><div class="rec-v">김동욱, 손창빈, 서준혁, 김승리</div></div><div class="rec-r"><div class="rec-k">1~2등급</div><div class="rec-v">강민철, 김승리, 손창빈, 유신</div></div><div class="rec-r"><div class="rec-k">2~3등급</div><div class="rec-v">이승모, 강민철, 박석준</div></div><div class="rec-r"><div class="rec-k">3등급 이하</div><div class="rec-v">유대종, 박석준, 관리형 중형 학원</div></div><div class="rec-r"><div class="rec-k">문학이 약함</div><div class="rec-v">김재훈 문학 특강, 서준혁, 강은양, 김상훈(멕스)</div></div><div class="rec-r"><div class="rec-k">독서가 약함</div><div class="rec-v">손창빈, 윤지환, 김동욱 (해설 중시는 유신)</div></div><div class="rec-r"><div class="rec-k">언매·화작 실수</div><div class="rec-v">손창빈, 유신, 유대종, 인강 전형태</div></div><div class="rec-r"><div class="rec-k">구조독해가 안 맞음</div><div class="rec-v">김동욱, 손창빈 (맞으면 김승리·강민철)</div></div><div class="rec-r"><div class="rec-k">시간이 부족함</div><div class="rec-v">강은양</div></div></div>
+<h3>강사별 비교</h3><div class="cards"><article class="card"><header><h4>강은양</h4><span class="tag">시대</span></header><p class="feat">문학·선지분석, 국어 일타 중 드문 여성 강사</p><p class="pro"><b>장점</b>시간 단축법이 강점이라 정시생에게 추천, 교재가 좋고 섬세함. 수강생 백분위 99~100 사례</p><p class="con"><b>단점</b>자료가 너무 많아 다른 국어 공부할 시간이 없다는 평. 필기·숙제가 많아 남학생은 호불호, 비문학은 따로 보완 필요</p></article><article class="card"><header><h4>김재훈</h4><span class="tag">시대·대찬</span></header><p class="feat">문학 1타</p><p class="pro"><b>장점</b>문학 특강 후기가 가장 좋음, 문학 감이 안 오는 학생에게 효과</p><p class="con"><b>단점</b>말이 빠름, 신청 전쟁</p></article><article class="card"><header><h4>강민철</h4><span class="tag">멕스</span></header><p class="feat">구조독해, 이원화. 6·9월 모의평가 지문을 기출과 엮어 분석</p><p class="pro"><b>장점</b>낮은 등급까지 하나하나 풀어 설명, 독서에 특히 도움. 반이 많아 대기도 대부분 풀림</p><p class="con"><b>단점</b>문학 인강 의무, 교재비 비쌈. 현강이 독서 위주라 문학은 도움이 덜하다는 후기, 후반엔 복습량 부담</p></article><article class="card"><header><h4>김승리</h4><span class="tag">두각</span></header><p class="badge">🖥️ 이원화 수업</p><p class="feat">구조독해, 독서·언매</p><p class="pro"><b>장점</b>필기가 깔끔하고 체계적, 지루하지 않은 강의. 상위권 핵심 위주, 숙제를 다 해내면 오른다는 평. 수능 만점 사례</p><p class="con"><b>단점</b>이원화라 절반은 화면으로 수업, 숙제 검사 없음, 자리가 좁음. 교재량 과다, 문학은 약한 편</p></article><article class="card"><header><h4>손창빈</h4><span class="tag">멕스</span></header><p class="feat">비문학·언매 강자, 리트 지문</p><p class="pro"><b>장점</b>이과형에 잘 맞음, 언매 최고 평, 정규반에 문법 특강 무료. 질문·상담이 좋음</p><p class="con"><b>단점</b>문학은 상대적으로 약함, 2등급에겐 벅찰 수 있음</p></article><article class="card"><header><h4>서준혁</h4><span class="tag">시대</span></header><p class="feat">독서·문학 균형</p><p class="pro"><b>장점</b>올해 급성장, 호평 많음. 설명회·라이브 만족 후기</p><p class="con"><b>단점</b>교재는 별로라는 평</p></article><article class="card"><header><h4>윤지환</h4><span class="tag">시대</span></header><p class="feat">독서 강점</p><p class="pro"><b>장점</b>해설지가 압도적으로 좋고 상담을 잘 받아줌</p><p class="con"><b>단점</b>강의력은 아주 뛰어나진 않다는 평</p></article><article class="card"><header><h4>유신</h4><span class="tag">시대·다원</span></header><p class="feat">독서 방법론</p><p class="pro"><b>장점</b>교재 구성이 좋고 문법 특강 무료. 여러 강사를 거친 학생이 ‘처음부터 유신을 들을 걸’ 했다는 후기, 시대 설명회 연사로 자주 나옴</p><p class="con"><b>단점</b>교재량 많음</p></article><article class="card"><header><h4>김동욱</h4><span class="tag">멕스·미탐·시대</span></header><p class="feat">비문학, 구조독해로 끊어 읽지 않음, 리트 지문</p><p class="pro"><b>장점</b>기본기를 잡아 혼자 읽게 만듦, 속독형에 잘 맞음. 따뜻한 인생 조언, ‘인강으로 들어도 진국’이라는 평</p><p class="con"><b>단점</b>EBS 연계 수업은 따로 없음. 원래 잘하는 학생이 많고, 국어가 약한 학생은 큰 폭 상승은 아니었다는 후기</p></article><article class="card"><header><h4>유대종</h4><span class="tag">두각·세정</span></header><p class="badge">🖥️ 이원화 수업</p><p class="feat">언매 1타, 말솜씨 좋음</p><p class="pro"><b>장점</b>언매 총론 1인자 평, 틀린 문제와 풀이 흔적을 보고 약점을 짚어줌. 파이널 적중·자료 양 호평, 노베 3~4→1 사례</p><p class="con"><b>단점</b>이원화라 일부는 화면으로 수업. 수업이 15~30분씩 늦게 끝남. 체화에 시간이 필요해 노베는 시간이 빠듯, 거친 말 호불호</p></article><article class="card"><header><h4>이승모</h4><span class="tag">두각·강남대성</span></header><p class="feat">근거 기반 설명, 방법론보다 독해력·사고력 강조 (전 박광일 연구실장)</p><p class="pro"><b>장점</b>문학·비문학 고루 좋고 2~3등급 추천. 강남대성 강의평가 최상위, 수업이 재미있다는 평. 매주 주간지, 파이널엔 기출 점검을 위해 분량을 줄임</p><p class="con"><b>단점</b>정해진 풀이법·스킬을 원하는 학생에겐 막연할 수 있음. 커뮤니티 후기가 적은 편</p></article><article class="card"><header><h4>박석준</h4><span class="tag">멕스</span></header><p class="feat">대형강의가 아닌 반</p><p class="pro"><b>장점</b>완성된 1등급이 아닌 3등급 안팎 학생의 등급 상승 사례</p><p class="con"><b>단점</b>후기 적음, 스타일이 맞아야 효과</p></article><article class="card"><header><h4>이원준</h4><span class="tag">러셀</span></header><p class="feat">‘천재들의 사고법’, 독특한 풀이 기술</p><p class="pro"><b>장점</b>비문학 기출분석으로 성적이 오른 사례, 러셀 최고라는 평. 현강 전용 자료로 인강과 차이</p><p class="con"><b>단점</b>문학이 약하면 비추, 커리가 부실하다는 평. 조교 관리가 꼼꼼한 편은 아님</p></article></div>
+<p class="note">그 외(2025년 글 기준): 정석민·이정수(두각, 비문학), 심우찬(예섬, 독서·재미), 강지연(시대·다원, 비문학), 황용일(문학), 백환(언매).</p>
+<h3>국어가 약하다면</h3><p class="sub">강사보다 ‘스스로 읽는 양’이 핵심입니다.</p><ol class="steps"><li>수업만 듣지 말고 매일 1~2시간 직접 풀고 오답하기</li><li>기출 다회독. 사설 모의고사 점수는 연습용</li><li>지문을 읽고 덮은 뒤 내용을 말로 설명해보기</li><li>문학 감이 안 오면 김재훈 문학 특강(12주)</li><li>EBS 수특·수완 완벽하게</li><li>좋아하는 장르 소설이라도 매일 읽고, 휴대폰·유튜브 줄이기</li></ol>
+</section>
+<section id="math"><p class="num">03</p><h2>수학</h2>
+<p class="intro">내년 수능은 대수·미적분Ⅰ·확률과 통계입니다. 성적보다 한 단계 어려운 수업을 고르고, 첫 수업부터 풀커리를 타는 것이 안전합니다.</p>
+<h3>성적대별 추천</h3><div class="rec"><div class="rec-h"><span>모의고사 성적</span><span>추천</span></div><div class="rec-r"><div class="rec-k">고정 100 · 백분위 99+</div><div class="rec-v">김현우 → 강기원 → 최지욱 순으로 신청, 극상위는 이동선</div></div><div class="rec-r"><div class="rec-k">백분위 97~99</div><div class="rec-v">김현우, 최지욱, 신성규</div></div><div class="rec-r"><div class="rec-k">1컷~높은 2</div><div class="rec-v">이동준(스킬), 박종민(정석), 장재원</div></div><div class="rec-r"><div class="rec-k">2~3등급</div><div class="rec-v">이동준, 장재원, 안가람</div></div><div class="rec-r"><div class="rec-k">3~4등급</div><div class="rec-v">김기현(러셀)</div></div><div class="rec-r"><div class="rec-k">노베</div><div class="rec-v">메가 김성은(인강)으로 개념부터</div></div><div class="rec-r"><div class="rec-k">확통</div><div class="rec-v">남지현(시대), 손승연·정상모(두각). 노베는 기말 직후 개념 인강을 먼저</div></div><div class="rec-r"><div class="rec-k">대치 밖</div><div class="rec-v">시대 라이브</div></div></div>
+<h3>강사별 비교</h3><div class="cards"><article class="card"><header><h4>김현우</h4><span class="tag">시대</span></header><p class="feat">체계적 분류</p><p class="pro"><b>장점</b>자료 최상급, 호평 일색</p><p class="con"><b>단점</b>신청 극악, 거친 말, 자료량 많음</p></article><article class="card"><header><h4>강기원</h4><span class="tag">시대</span></header><p class="feat">정석·발상적</p><p class="pro"><b>장점</b>자료 저렴, 문제해결력</p><p class="con"><b>단점</b>해설 간략, 드랍·이탈 많음</p></article><article class="card"><header><h4>최지욱</h4><span class="tag">시대·다원</span></header><p class="feat">최고난도</p><p class="pro"><b>장점</b>전달력, 추가영상 주 3~4시간, 대기 없음</p><p class="con"><b>단점</b>추가영상 필수, 하반기 아쉬움</p></article><article class="card"><header><h4>이동준</h4><span class="tag">시대</span></header><p class="feat">스킬+풀이 태도</p><p class="pro"><b>장점</b>교재·복습영상 무제한, 공부법</p><p class="con"><b>단점</b>첫 수업 필수, 최근 쉬워졌다는 말</p></article><article class="card"><header><h4>박종민</h4><span class="tag">시대</span></header><p class="feat">정석·조건해석</p><p class="pro"><b>장점</b>자료 퀄, 중간 합류 가능</p><p class="con"><b>단점</b>생각보다 어려움, 텐션 높음</p></article><article class="card"><header><h4>장재원</h4><span class="tag">시대</span></header><p class="feat">분석 중심, 차분한 템포</p><p class="pro"><b>장점</b>펜 대기 전에 문제를 읽고 생각하는 태도를 철저히 훈련. 실전처럼 긴장감 있는 수업, 상담이 친절. 80~88점대 성적 올리기 좋다는 평, 신청 수월</p><p class="con"><b>단점</b>숙제를 안 해 오면 엄격. 시즌1을 건너뛰면 이해가 덜 된다는 후기</p></article><article class="card"><header><h4>안가람</h4><span class="tag">시대</span></header><p class="feat">발상 중심, 빠른 템포, 자료 풍부</p><p class="pro"><b>장점</b>공통(수Ⅰ·수Ⅱ) 정규반 인기, 2~3등급 무난</p><p class="con"><b>단점</b>1컷을 넘기엔 아쉽다는 평, 빠른 템포에 익숙해야 함</p></article><article class="card"><header><h4>이동선</h4><span class="tag">시대·다원</span></header><p class="feat">극상위 팀수업</p><p class="pro"><b>장점</b>자료 압도적, 만점자 많고 분위기 좋음, 마감 안 됨</p><p class="con"><b>단점</b>어렵고 극상위 위주라 2등급 이하엔 비추. 다원 팀수업은 백분위 99 이상 입반</p></article><article class="card"><header><h4>신성규</h4><span class="tag">러셀·멕스</span></header><p class="feat">수학 독해력</p><p class="pro"><b>장점</b>강의력 좋음, 수강생 만족</p><p class="con"><b>단점</b>어렵고 평이 갈림</p></article><article class="card"><header><h4>김범준</h4><span class="tag">두각</span></header><p class="badge">📅 현강 7월 개강</p><p class="feat">개념+논리</p><p class="pro"><b>장점</b>자료 많음, 두각 1순위</p><p class="con"><b>단점</b>상반기엔 현강이 없어 그전엔 인강으로 따라가야 함</p></article><article class="card"><header><h4>정병훈</h4><span class="tag">두각</span></header><p class="feat">하반기·파이널 실모 위주</p><p class="pro"><b>장점</b>실모·자료를 많이 줌, 박종민급 난도, 현강 메리트가 크다는 평</p><p class="con"><b>단점</b>상반기엔 잡담이 많아 호불호</p></article><article class="card"><header><h4>정병호</h4><span class="tag">두각</span></header><p class="feat">수학 전공식 정석 풀이</p><p class="pro"><b>장점</b>고2 2등급에게 추천, 난도 낮은 편, 하반기 실모 활용</p><p class="con"><b>단점</b>수능장에서 쓰기 어려운 풀이가 있어 호불호</p></article><article class="card"><header><h4>남지현</h4><span class="tag">시대</span></header><p class="feat">확통</p><p class="pro"><b>장점</b>교재·손필기 해설 좋음, 친절</p><p class="con"><b>단점</b>쉽지 않음. 정규반은 실전개념만 다뤄 확통 노베는 개념 인강을 먼저 떼야 함</p></article><article class="card"><header><h4>손승연</h4><span class="tag">두각</span></header><p class="feat">확통</p><p class="pro"><b>장점</b>주로 1~2등급이 듣는 확통 현강, 시즌2 N제 등 문제량이 풍부</p><p class="con"><b>단점</b>N제 분량이 많아 다른 N제와 병행이 버거울 수 있고, 하위권엔 난도 부담. 후기 적음</p></article><article class="card"><header><h4>정상모</h4><span class="tag">두각</span></header><p class="feat">확통</p><p class="pro"><b>장점</b>확통·수Ⅰ·수Ⅱ·미적을 과목별로 따로 운영해 필요한 과목만 골라 듣기 좋음</p><p class="con"><b>단점</b>현강이 인강과 같다는 평</p></article><article class="card"><header><h4>김기현</h4><span class="tag">러셀</span></header><p class="feat">기초부터 차근차근</p><p class="pro"><b>장점</b>너무 크지 않은 강의, 3→1 사례</p><p class="con"><b>단점</b>너무 쉽고 현강이 인강과 같다는 평</p></article></div>
+<ul class="tips"><li><b>성향별:</b> 발상형은 강기원, 노력형은 김현우, 친절한 수업을 원하면 박종민, 공부법까지 원하면 이동준</li><li><b>갈아타기:</b> 박종민·김범준은 중간 합류가 쉽고, 이동준·김현우는 어렵다</li><li><b>공부량:</b> 강의와 자습은 최소 1:2. 고3 수업은 대부분 과제 검사가 없다</li></ul>
+</section>
+<section id="english"><p class="num">04</p><h2>영어</h2>
+<p class="intro">영어는 학원을 끊으면 공부를 안 하게 되기 쉽습니다. 1등급이라도 주 1회는 정규 루틴을 유지하세요.</p>
+<h3>성적대별 추천</h3><div class="rec"><div class="rec-h"><span>상황</span><span>추천</span></div><div class="rec-r"><div class="rec-k">1등급 유지</div><div class="rec-v">정석현, 오렌지, 조정호</div></div><div class="rec-r"><div class="rec-k">1~2등급 오감</div><div class="rec-v">조정식, 션티, 이명학, 김지영</div></div><div class="rec-r"><div class="rec-k">영어가 어려움</div><div class="rec-v">이영수, 또선생(대찬)</div></div><div class="rec-r"><div class="rec-k">문제량을 원함</div><div class="rec-v">킹콩 40모고</div></div></div>
+<h3>강사별 비교</h3><div class="cards"><article class="card"><header><h4>조정호</h4><span class="tag">시대</span></header><p class="feat">주간지~자체 모의고사</p><p class="pro"><b>장점</b>콘텐츠 고퀄, 빈칸·순서·삽입을 경우의 수로 따져 읽는 법. 2~3등급에서 수능 1등급 사례, 라이브 있음</p><p class="con"><b>단점</b>수강신청 경쟁</p></article><article class="card"><header><h4>션티</h4><span class="tag">두각</span></header><p class="feat">KISS 교재, 독해 태도(ABPS) 체화, 매주 단어 시험</p><p class="pro"><b>장점</b>몰입도 높은 강의, 발음이 좋아 집중이 잘 된다는 평. 6월 3등급 → 시즌2 현강으로 1등급 사례. 조교가 복기 숙제를 한 명씩 피드백, 현강생 복습 영상 제공</p><p class="con"><b>단점</b>대치 영어 단과 중 유일하게 이원화(일부는 화면 수업). 주간지 등 교재가 비싸고 분량 많음, 마감·대기 잦음</p></article><article class="card"><header><h4>조정식</h4><span class="tag">멕스</span></header><p class="feat">분석적 독해</p><p class="pro"><b>장점</b>흡입력, 1~2등급을 1로</p><p class="con"><b>단점</b>1등급엔 쉬울 수 있음</p></article><article class="card"><header><h4>오렌지</h4><span class="tag">멕스</span></header><p class="feat">다정한 스타일</p><p class="pro"><b>장점</b>숙제 부담 적어 타과목과 균형, 매일 단어 문자. 1등급 안정화에 좋음</p><p class="con"><b>단점</b>1등급 유지용이라 2등급 이하 끌어올리기엔 부족할 수 있음</p></article><article class="card"><header><h4>정석현</h4><span class="tag">시대</span></header><p class="feat">1등급 성적표 제출해야 수강. 서울대 영어교육, 전 대원외고 교사·전국모의 출제위원 출신. 수능 출제원칙에 따라 정답 근거와 오답 이유를 분석</p><p class="pro"><b>장점</b>감으로 푸는 습관을 고쳐줌. 제목·빈칸·문장삽입을 안 틀리게 됐다는 후기. 실전모의+고난도 해설, 매주 자체 모의고사·손글씨 해설 과제장, 강사가 직접 질문 받음. 1등급 유지용으로 좋음</p><p class="con"><b>단점</b>다소 올드하고 재미없다는 평. 1등급만 수강 가능해 2등급 이하는 들을 수 없음</p></article><article class="card"><header><h4>김기병</h4><span class="tag">시대·세정</span></header><p class="feat">텐션 높고 위트 있음, 유형별로 무엇을 봐야 하는지와 밑줄 긋는 법·간결한 문법을 알려줌. 빈칸은 주제문 찾기 중심</p><p class="pro"><b>장점</b>웃음과 집중이 함께하는 수업이라는 평, 독해·문법·단어를 고루 챙김. 어법·문장삽입에 도움. 라이브로 들으며 실력이 한두 단계 올랐다는 후기, 시대 영어 마감 1~2위</p><p class="con"><b>단점</b>하이톤 목소리 호불호. 어려운 문장 해석보다 문제풀이 위주라는 평. 효과가 6월 이후에야 느껴졌다는 후기</p></article><article class="card"><header><h4>김동하</h4><span class="tag">시대</span></header><p class="feat">고난도 자체 모의고사(현강생 평균 50~60점대), 어려운 문제 위주, ‘단어를 알면 독해된다’ 강조</p><p class="pro"><b>장점</b>대치 영어 현강생 최다. 영어에 자신 없는 이과생에게 자신감을 심어주고 칭찬을 많이 함. 쉬는 시간 질문 적극 수용, 과제는 단어 암기 외엔 거의 없음</p><p class="con"><b>단점</b>교재비 비쌈, 2등급엔 비추라는 평. 모의고사 점수가 수능보다 15점쯤 낮게 나와 멘탈 관리 필요. 하이톤 목소리 호불호</p></article><article class="card"><header><h4>또선생</h4><span class="tag">대찬</span></header><p class="feat">유형별 풀이법, 쉬운 유형을 빠르고 확실하게 푸는 법</p><p class="pro"><b>장점</b>하위·중위권 성적 상승 사례가 많음(6월 4등급→수능 1등급, 6등급→4등급). 몰입도 높고 재미있다는 평, 유튜브 수능 영어 강의로 유명</p><p class="con"><b>단점</b>빈칸·순서·삽입 같은 고난도는 다른 방법론을 병행했다는 후기가 있어 상위권엔 부족할 수 있음. 수업 열리면 빠르게 마감</p></article></div>
+</section>
+<section id="nonsul"><p class="num">05</p><h2>수리논술</h2>
+<p class="intro">내신이 1.8 이후라면 수시 6장을 모두 논술로 쓴다고 생각하고 준비하세요. 수학 모의고사가 1등급이면 이번 겨울방학부터 시작하는 것을 추천합니다.</p>
+<div class="key key-plain"><b>미적분Ⅱ는?</b>별도 현강을 들을 필요는 없고 인강으로 학습하면 충분합니다.</div>
+<h3>어떤 수업이 맞을까</h3>
+<div class="paths">
+<div class="path"><p class="path-q">대면 첨삭이 필요하다 · 서술에 자신이 없다</p><h4>소수 학원</h4><p>세정·미래탐구 등에 개설된 논술 수업은 대부분 소수 인원입니다. 시대도 인기 강사가 아니면 보통 30~50명대예요.</p></div>
+<div class="path"><p class="path-q">대면 첨삭은 없어도 된다 · 경쟁과 내 위치 확인이 필요하다</p><h4>대형 강의</h4><p>시대 우주설, 김기원. 매회 시험과 등수로 실력을 가늠할 수 있습니다.</p></div>
+</div>
+<h3>강사별 비교</h3><div class="cards"><article class="card"><header><h4>우주설</h4><span class="tag">시대·다원 (분당 알티스)</span></header><p class="feat">기출분석+개념 교재, 발상이 떠오르는 과정을 이야기로 설명</p><p class="pro"><b>장점</b>교재가 알차고, ‘처음 보는 학생이 이걸 어떻게 떠올리나’를 짚어줌. 최근 현강 전반이 마감될 만큼 인기, 온라인 첨삭게시판 운영</p><p class="con"><b>단점</b>판서로 계산을 다 써서 진도가 느리다는 평. 시작반도 문제는 쉽지 않음</p></article><article class="card"><header><h4>김기원</h4><span class="tag">시대인재</span></header><p class="feat">매 수업 모의논술 1세트(80~90분) → 전 문항 해설, 주간지 숙제, 매회 점수·등수 공개</p><p class="pro"><b>장점</b>문제 퀄과 발상부터 짚는 해설, 시간 단축 팁. 등수로 내 위치 확인. 의대~연대·한양대 수준</p><p class="con"><b>단점</b>난도가 높아 초반 이탈이 많고 ‘경시 같다’는 평. 채점은 조교가 함. 시험지가 해마다 크게 안 바뀜</p></article><article class="card"><header><h4>김기대</h4><span class="tag">세정</span></header><p class="feat">대학별 파이널과 기출분석, 확통·기하 특강</p><p class="pro"><b>장점</b>기출분석이 인상적이었다는 합격 후기(연세대·한양대·인하대). 사고의 깊이가 다르다는 평</p><p class="con"><b>단점</b>노베는 소화하기 어려움. 일부 실전 문제가 과하다는 평. 온라인 답안 제출 기한이 빠듯. 파이널만보다 앞 커리부터 권장</p></article><article class="card"><header><h4>여상진</h4><span class="tag">시대</span></header><p class="feat">정리·방법론 중심</p><p class="pro"><b>장점</b>강의력과 정리가 좋다는 평. 혼자 연습할 시간이 적은 현역에게 추천</p><p class="con"><b>단점</b>인원이 많아 개별 첨삭·관리가 부족하다는 평. 난도가 높아 아이 수준에 맞는지 판단 필요</p></article><article class="card"><header><h4>김종두</h4><span class="tag">시대</span></header><p class="feat">연대·한양대 수준, 새로운 유형의 문제를 많이 보여줌</p><p class="pro"><b>장점</b>모의논술 난이도가 적당하고 서면 첨삭이 꼼꼼하다는 평</p><p class="con"><b>단점</b>수업이 빨라 복습 때 헷갈린다는 평</p></article><article class="card"><header><h4>전현정</h4><span class="tag">시대</span></header><p class="feat">대학별 답안지 형식에 맞춘 실전 연습, 수리논술에 꼭 필요한 것부터</p><p class="pro"><b>장점</b>조교 대면 첨삭이 꼼꼼, 상담이 분석적, 수업이 재미있다는 평. 처음 시작하는 학생에게 무난</p><p class="con"><b>단점</b>최근 후기 중 난도가 쉽고 설명이 자세하지 않다는 평도 있음</p></article></div>
+<p class="note">그 외: 서지현(시대, 김기원보다 쉽다는 평), 손진(강남대성). 수리논술 강사 평은 수험생 커뮤니티(오르비, 디시 수리논술 갤러리)의 개인 후기를 모은 것이고 일부는 2~4년 전 글입니다.</p>
+</section>
+<section id="calc2" class="notice"><p class="num">06</p><h2>남궁민수T 미적분Ⅱ 내신 수업</h2>
+<p class="intro">겨울방학 특강으로 8회 수업한 뒤, 3월부터 내신반으로 이어집니다.</p>
+<div class="classes">
+<div class="cls"><span class="cls-tag">실력반</span><p class="cls-day">매주 수요일</p><p class="cls-time">오후 6시 – 10시</p><p class="cls-start">12월 30일(수) 개강</p></div>
+<div class="cls"><span class="cls-tag">기본반</span><p class="cls-day">매주 토요일</p><p class="cls-time">오후 6시 – 10시</p><p class="cls-start">12월 26일(토) 개강</p></div>
+</div>
+<ol class="flow"><li><b>12월 말~</b>방학특강 8회</li><li><b>3월~</b>내신반 개강</li></ol>
+</section>
+</main>
+<footer><div class="wrap">학부모·수험생 커뮤니티 후기를 모은 참고 자료입니다. 강사 평가는 개인 경험이며, 개설 강좌·시간표·소속 학원은 각 학원 공지로 확인하세요.</div></footer>
+</body></html>
